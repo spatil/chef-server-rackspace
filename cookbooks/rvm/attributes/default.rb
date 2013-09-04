@@ -7,7 +7,6 @@
 # default[:rvm][:ruby][:implementation] = 'ruby'
 # most people default to 1.8.7 still
 # even if I prefer 1.9.2.
-# default[:rvm][:ruby][:version] = '1.8.7'
 # set the default patch level
 # default[:rvm][:ruby][:patch_level] = 'p302'
 
@@ -20,3 +19,4 @@ default[:rvm][:version] = :stable
 default[:rvm][:track_updates] = false
 
 
+default[:rvm][:ruby][:version] = '2.0.0'
