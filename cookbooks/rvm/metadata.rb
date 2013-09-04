@@ -17,6 +17,7 @@ recipe "rvm::install", "Install a ruby implementation based on attributes"
 # for common implementations for
 # people who can't/won't set
 # node attributes for themselves.
+recipe "rvm::ruby_200", "Helper recipe to install ruby 2.0.0"
 recipe "rvm::ruby_192", "Helper recipe to install ruby 1.9.2"
 recipe "rvm::ruby_187", "Helper recipe to install ruby 1.8.7"
 recipe "rvm::ree", "Helper recipe to install ruby enterprise edition"

@@ -32,6 +32,7 @@
   "recipes": {
     "rvm": "Install system-wide RVM",
     "rvm::install": "Install a ruby implementation based on attributes",
+    "rvm::ruby_200": "Helper recipe to install ruby 2.0.0",
     "rvm::ruby_192": "Helper recipe to install ruby 1.9.2",
     "rvm::ruby_187": "Helper recipe to install ruby 1.8.7",
     "rvm::ree": "Helper recipe to install ruby enterprise edition"
