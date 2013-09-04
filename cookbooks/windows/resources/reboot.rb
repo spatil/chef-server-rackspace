@@ -20,8 +20,10 @@
 
 actions :request, :cancel
 
-attribute :timeout, :kind_of => Integer, :default => 60, :name_attribute => true
-attribute :reason, :kind_of => String, :default => ''
+attribute :ruby_string,      :kind_of => String, :name_attribute => true
+attribute :user,             :kind_of => String
+attribute :patch,            :kind_of => String
+attribute :rubygems_version, :kind_of => String
 
 def initialize(name,run_context=nil)
   super
