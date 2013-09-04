@@ -18,5 +18,3 @@ default[:rvm][:version] = :stable
 # installation of :head.
 default[:rvm][:track_updates] = false
 
-
-default[:rvm][:ruby][:version] = '2.0.0'
