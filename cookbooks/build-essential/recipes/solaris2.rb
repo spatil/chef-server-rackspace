@@ -34,9 +34,8 @@
   pkgconfig
 }.each do |pkg|
 
-  r = pkgutil_package pkg do
-    action( node['build_essential']['compiletime'] ? :nothing : :install )
-  end
-  r.run_action(:install) if node['build_essential']['compiletime']
+attribute :ruby_string, :kind_of => String, :name_attribute => true
+attribute :user,        :kind_of => String
+attribute :patch,       :kind_of => String
 
 end

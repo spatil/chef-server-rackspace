@@ -17,17 +17,16 @@
 # limitations under the License.
 #
 
-node.set['apt']['caching_server'] = true
+# install rvm api gem during chef compile phase
+gem_package 'rvm' do
+  action :nothing
+end.run_action(:install)
 
-package "apt-cacher-ng" do
-  action :install
-end
-
-directory node['apt']['cacher_dir'] do
-  owner "apt-cacher-ng"
-  group "apt-cacher-ng"
-  mode 0755
-end
+require 'rubygems'
+Gem.clear_paths
+require 'rvm'
+create_rvm_shell_chef_wrapper
+create_rvm_chef_user_environment
 
 template "/etc/apt-cacher-ng/acng.conf" do
   source "acng.conf.erb"
@@ -37,7 +36,8 @@ template "/etc/apt-cacher-ng/acng.conf" do
   notifies :restart, "service[apt-cacher-ng]", :immediately
 end
 
-service "apt-cacher-ng" do
-  supports :restart => true, :status => false
-  action [:enable, :start]
+class Chef::Recipe
+  # mix in recipe helpers
+  include Chef::RVM::RecipeHelpers
+  include Chef::RVM::StringHelpers
 end

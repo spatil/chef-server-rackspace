@@ -19,5 +19,5 @@
 # limitations under the License.
 #
 
-node.run_state['nginx_configure_flags'] =
-  node.run_state['nginx_configure_flags'] | ["--with-http_ssl_module"]
+default['rvm']['vagrant']['system_chef_client'] = "/opt/ruby/bin/chef-client"
+default['rvm']['vagrant']['system_chef_solo'] = "/opt/ruby/bin/chef-solo"
