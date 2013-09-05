@@ -20,12 +20,12 @@
 # limitations under the License.
 #
 node.default["nginx"]["passenger"]["version"] = "3.0.19"
-node['languages']['ruby']['gems_dir'] = "/usr/local/rvm/gems/ruby-2.0.0-p247" 
-node['languages']['ruby']['ruby_bin'] = "/usr/local/rvm/rubies/ruby-2.0.0-p247/bin/ruby"
+#node.default['languages']['ruby']['gems_dir'] = "/usr/local/rvm/gems/ruby-2.0.0-p247" 
+#node.default['languages']['ruby']['ruby_bin'] = "/usr/local/rvm/rubies/ruby-2.0.0-p247/bin/ruby"
 
 if node["languages"].attribute?("ruby")
-  node.default["nginx"]["passenger"]["root"] = "#{node['languages']['ruby']['gems_dir']}@global/gems/passenger-#{node['nginx']['passenger']['version']}"
-  node.default["nginx"]["passenger"]["ruby"] = node['languages']['ruby']['ruby_bin']
+  node.default["nginx"]["passenger"]["root"] = "/usr/local/rvm/gems/ruby-2.0.0-p247@global/gems/passenger-#{node['nginx']['passenger']['version']}"
+  node.default["nginx"]["passenger"]["ruby"] = "/usr/local/rvm/rubies/ruby-2.0.0-p247/bin/ruby" 
 else
   Chef::Log.warn("node['languages']['ruby'] attribute not detected in #{cookbook_name}::#{recipe_name}")
   Chef::Log.warn("Install a Ruby for automatic detection of node['nginx']['passenger'] attributes (root, ruby)")
