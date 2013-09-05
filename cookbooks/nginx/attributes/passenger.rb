@@ -20,8 +20,8 @@
 # limitations under the License.
 #
 node.default["nginx"]["passenger"]["version"] = "3.0.19"
-node.default['languages']['ruby']['gems_dir'] = "/usr/local/rvm/gems/ruby-2.0.0-p247" 
-node.default['languages']['ruby']['ruby_bin'] = "/usr/local/rvm/rubies/ruby-2.0.0-p247/bin/ruby"
+node['languages']['ruby']['gems_dir'] = "/usr/local/rvm/gems/ruby-2.0.0-p247" 
+node['languages']['ruby']['ruby_bin'] = "/usr/local/rvm/rubies/ruby-2.0.0-p247/bin/ruby"
 
 if node["languages"].attribute?("ruby")
   node.default["nginx"]["passenger"]["root"] = "#{node['languages']['ruby']['gems_dir']}@global/gems/passenger-#{node['nginx']['passenger']['version']}"
