@@ -20,9 +20,11 @@
 # limitations under the License.
 #
 node.default["nginx"]["passenger"]["version"] = "3.0.19"
+node.default['languages']['ruby']['gems_dir'] = "$(rvm gemdir)" 
+node.default['languages']['ruby']['ruby_bin'] = "$(which ruby)"
 
 if node["languages"].attribute?("ruby")
-  node.default["nginx"]["passenger"]["root"] = "#{node['languages']['ruby']['gems_dir']}/gems/passenger-#{node['nginx']['passenger']['version']}"
+  node.default["nginx"]["passenger"]["root"] = "#{node['languages']['ruby']['gems_dir']}@global/gems/passenger-#{node['nginx']['passenger']['version']}"
   node.default["nginx"]["passenger"]["ruby"] = node['languages']['ruby']['ruby_bin']
 else
   Chef::Log.warn("node['languages']['ruby'] attribute not detected in #{cookbook_name}::#{recipe_name}")

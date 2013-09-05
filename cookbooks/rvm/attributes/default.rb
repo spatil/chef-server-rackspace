@@ -20,8 +20,8 @@
 #
 
 # ruby that will get installed and set to `rvm use default`.
-default['rvm']['default_ruby']      = "ruby-2.0.0"
-default['rvm']['user_default_ruby'] = "ruby-2.0.0"
+default['rvm']['default_ruby']      = "ruby-2.0.0-p247"
+default['rvm']['user_default_ruby'] = "ruby-2.0.0-p247"
 
 # list of additional rubies that will be installed
 default['rvm']['rubies']      = []
@@ -29,7 +29,8 @@ default['rvm']['user_rubies'] = []
 
 # list of gems to be installed in global gemset of all rubies
 _global_gems_ = [
-  { 'name'    => 'bundler' }
+  { 'name'    => 'bundler'   },
+  { 'name'    => 'passenger' }
 ]
 default['rvm']['global_gems']       = _global_gems_.dup
 default['rvm']['user_global_gems']  = _global_gems_.dup
@@ -73,3 +74,4 @@ when "mac_os_x", "mac_os_x_server"
   node.set['rvm']['install_pkgs']   = %w{git}
   default['rvm']['user_home_root']  = '/Users'
 end
+
