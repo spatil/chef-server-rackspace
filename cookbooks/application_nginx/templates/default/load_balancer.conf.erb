@@ -22,7 +22,8 @@ server {
     alias <%= path %>;
   }
   <% end %>
-  location / {
-    proxy_pass http://<%= @resource.application.name %>;
-  }
+
+  root <%= @resource.application_path %> 
+  passenger_enabled on;
+  rails_env <%= @resource.application_env %>;
 }
