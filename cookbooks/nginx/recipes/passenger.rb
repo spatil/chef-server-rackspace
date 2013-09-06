@@ -54,3 +54,15 @@ end
 
 node.run_state['nginx_configure_flags'] =
   node.run_state['nginx_configure_flags'] | ["--add-module=#{node["nginx"]["passenger"]["root"]}/ext/nginx"]
+
+node[:nginx][:passenger][:sites].each do |site|
+  template "/etc/nginx/sites-available/#{site[:sitename]}" do
+    source "passenger_site.erb"
+    mode 0644
+    variables(
+      :sitename => site[:sitename],
+      :deploy_path => site[:deploy_path],
+      :domains => site[:domains],
+    )
+  end
+end
