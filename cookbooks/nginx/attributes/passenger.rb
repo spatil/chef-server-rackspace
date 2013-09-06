@@ -46,7 +46,7 @@ node.default["nginx"]["passenger"]["gem_binary"] = nil
 
 node.default["nginx"]["passenger"]["sites"] = [
   {
-    :deploy_path => "/var/www/apps/zenith4",
+    :deploy_path => "/home/deploy",
     :sitename    => "zenith4",
     :domains     => ["_"]
   }

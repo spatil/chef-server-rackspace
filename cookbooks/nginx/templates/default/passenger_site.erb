@@ -10,7 +10,7 @@ server {
 
   # you could put a list of other domain names this application answers
   server_name <%= @domains.join(' ') %>;
-  access_log /var/log/nginx/<%= @sitename %>.log;
+  access_log <%= node['nginx']['log_dir'] %>/access.log;
   rewrite_log on;
 
   root <%= File.join @deploy_path, @sitename %>/current/public;
