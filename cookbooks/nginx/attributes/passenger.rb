@@ -44,6 +44,6 @@ node.default["nginx"]["passenger"]["pool_idle_time"] = 300
 node.default["nginx"]["passenger"]["max_requests"] = 0
 node.default["nginx"]["passenger"]["gem_binary"] = nil
 
-node.default["sites"]["deploy_path"]  = "/home/root/"
-node.default["sites"]["sitename"]     = "zenith4",
-node.default["sites"]["domains"]      = ["_"]
+node.default["nginx"]["passenger"]["sites"]["deploy_path"]  = "/home/root/"
+node.default["nginx"]["passenger"]["sites"]["sitename"]     = "zenith4",
+node.default["nginx"]["passenger"]["sites"]["domains"]      = ["_"]
