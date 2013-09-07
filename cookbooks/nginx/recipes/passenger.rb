@@ -63,6 +63,7 @@ node[:nginx][:passenger][:sites].each do |site|
       :sitename => site[:sitename],
       :deploy_path => site[:deploy_path],
       :domains => site[:domains],
+      :enviroment => site[:enviroment]
     )
   end
 end

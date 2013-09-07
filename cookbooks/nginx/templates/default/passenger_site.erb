@@ -16,6 +16,7 @@ server {
   root <%= File.join @deploy_path, @sitename %>/current/public;
   #index index.html index.htm;
   passenger_enabled on;
+  rails_env <%= @environment %>;
 
   #try_files $uri/index.html $uri.html $uri @unicorn;
 
