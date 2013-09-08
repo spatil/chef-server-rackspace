@@ -49,6 +49,6 @@ node.default["nginx"]["passenger"]["sites"] = [
     :deploy_path => "/home/deploy",
     :sitename    => "zenith4",
     :domains     => ["_"],
-    :envronment  => "staging"
+    :environment  => "staging"
   }
 ]

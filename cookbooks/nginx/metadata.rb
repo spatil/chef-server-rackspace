@@ -35,7 +35,7 @@ attribute "nginx/log_dir",
 attribute "nginx/user",
   :display_name => "Nginx User",
   :description => "User nginx will run as",
-  :default => "www-data"
+  :default => "deploy"
 
 attribute "nginx/binary",
   :display_name => "Nginx Binary",

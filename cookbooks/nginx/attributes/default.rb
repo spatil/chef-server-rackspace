@@ -42,7 +42,7 @@ when "gentoo"
   default['nginx']['user']       = "nginx"
   default['nginx']['init_style'] = "init"
 else
-  default['nginx']['user']       = "www-data"
+  default['nginx']['user']       = "deploy"
   default['nginx']['init_style'] = "init"
 end
 
