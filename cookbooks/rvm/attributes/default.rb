@@ -47,7 +47,7 @@ default['rvm']['user_installs'] = [
   {
     'user'          => 'deploy',
     'rubies'        => ['2.0.0'],
-    'default_ruby'  => 'rbx'
+    'default_ruby'  => '2.0.0'
   }
 ]
 
