@@ -4,7 +4,7 @@ default[:nginx][:binary]  = "/usr/sbin/nginx"
 default[:nginx][:root]    = "/var/www/nginx"
 
 default[:nginx][:user]    = case node[:platform]
-  when 'debian', 'ubuntu' then 'www-data'
+  when 'debian', 'ubuntu' then 'zenith'
   when 'redhat', 'centos', 'scientific', 'amazon', 'oracle', 'fedora' then 'nginx'
   else 'nginx'
 end
