@@ -147,7 +147,7 @@ node_config = {
     },
 
     :nginx => {
-      :user  =>  'www-data',
+      :user  =>  'zenith',
       :users => [{ username: 'USERNAME', password: 'PASSWORD' }]
     },
     # For testing flat attributes:
