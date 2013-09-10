@@ -45,7 +45,7 @@ default['rvm']['rvmrc']         = Hash.new
 # a list of user hashes, each an isolated per-user RVM installation
 default['rvm']['user_installs'] = [
   {
-    'user'          => 'deploy',
+    'user'          => 'zenith',
     'rubies'        => ['2.0.0'],
     'default_ruby'  => '2.0.0'
   }

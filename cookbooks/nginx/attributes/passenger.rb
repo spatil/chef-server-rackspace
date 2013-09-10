@@ -24,8 +24,8 @@ node.default["nginx"]["passenger"]["version"] = "4.0.16"
 #node.default['languages']['ruby']['ruby_bin'] = "/usr/local/rvm/rubies/ruby-2.0.0-p247/bin/ruby"
 
 if node["languages"].attribute?("ruby")
-  node.default["nginx"]["passenger"]["root"] = "/home/deploy/.rvm/gems/ruby-2.0.0-p247@global/gems/passenger-#{node['nginx']['passenger']['version']}"
-  node.default["nginx"]["passenger"]["ruby"] = "/home/deploy/.rvm/rubies/ruby-2.0.0-p247/bin/ruby" 
+  node.default["nginx"]["passenger"]["root"] = "/home/zenith/.rvm/gems/ruby-2.0.0-p247@global/gems/passenger-#{node['nginx']['passenger']['version']}"
+  node.default["nginx"]["passenger"]["ruby"] = "/home/zenith/.rvm/rubies/ruby-2.0.0-p247/bin/ruby" 
 else
   Chef::Log.warn("node['languages']['ruby'] attribute not detected in #{cookbook_name}::#{recipe_name}")
   Chef::Log.warn("Install a Ruby for automatic detection of node['nginx']['passenger'] attributes (root, ruby)")
@@ -46,7 +46,7 @@ node.default["nginx"]["passenger"]["gem_binary"] = nil
 
 node.default["nginx"]["passenger"]["sites"] = [
   {
-    :deploy_path => "/home/deploy",
+    :deploy_path => "/home/zenith",
     :sitename    => "zenith4",
     :domains     => ["_"],
     :environment  => "staging"
