@@ -19,7 +19,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-node.default["nginx"]["passenger"]["version"] = "4.0.16"
+node.default["nginx"]["passenger"]["version"] = "4.0.17"
 #node.default['languages']['ruby']['gems_dir'] = "/usr/local/rvm/gems/ruby-2.0.0-p247" 
 #node.default['languages']['ruby']['ruby_bin'] = "/usr/local/rvm/rubies/ruby-2.0.0-p247/bin/ruby"
 
