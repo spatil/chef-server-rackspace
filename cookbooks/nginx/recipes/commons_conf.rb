@@ -26,7 +26,7 @@ template "nginx.conf" do
   mode 00644
   notifies :reload, 'service[nginx]'
 end
-
+=begin
 template "#{node['nginx']['dir']}/sites-available/default" do
   source "default-site.erb"
   owner "root"
@@ -34,7 +34,7 @@ template "#{node['nginx']['dir']}/sites-available/default" do
   mode 00644
   notifies :reload, 'service[nginx]'
 end
-
+=end
 nginx_site 'default' do
   enable node['nginx']['default_site_enabled']
 end
