@@ -31,11 +31,15 @@ nginx_url = node['nginx']['source']['url'] ||
 node.set['nginx']['binary']          = node['nginx']['source']['sbin_path']
 node.set['nginx']['daemon_disable']  = true
 
+# This is commented because it created default system User. But as we are creating the user manually then 
+# we should not create a new user
+=begin
 user node['nginx']['user'] do
   system true
   shell "/bin/false"
   home "/var/www"
 end
+=end
 
 include_recipe "nginx::ohai_plugin"
 include_recipe "nginx::commons_dir"
