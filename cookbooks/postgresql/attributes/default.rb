@@ -144,7 +144,7 @@ when 'debian'
   default['postgresql']['config']['hba_file'] = "/etc/postgresql/#{node['postgresql']['version']}/main/pg_hba.conf"
   default['postgresql']['config']['ident_file'] = "/etc/postgresql/#{node['postgresql']['version']}/main/pg_ident.conf"
   default['postgresql']['config']['external_pid_file'] = "/var/run/postgresql/#{node['postgresql']['version']}-main.pid"
-  default['postgresql']['config']['listen_addresses'] = '0.0.0.0'
+  default['postgresql']['config']['listen_addresses'] = '*'
   default['postgresql']['config']['port'] = 5432
   default['postgresql']['config']['max_connections'] = 100
   default['postgresql']['config']['unix_socket_directory'] = '/var/run/postgresql'
@@ -178,7 +178,7 @@ default['postgresql']['pg_hba'] = [
   {:type => 'host', :db => 'all', :user => 'all', :addr => '127.0.0.1/32', :method => 'md5'},
   {:type => 'host', :db => 'all', :user => 'all', :addr => '::1/128', :method => 'md5'},
   {:type => 'local', :db => 'all', :user => 'zenith', :addr => nil, :method => 'md5'},
-  {:type => 'local', :db => 'all', :user => 'zenith', :addr => '10.176.3.58', :method => 'md5'},
+  {:type => 'host', :db => 'all', :user => 'zenith', :addr => '0.0.0.0/0', :method => 'md5'},
 ]
 
 default['postgresql']['password'] = Hash.new
